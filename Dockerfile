@@ -3,5 +3,6 @@ COPY pom.xml /tmp/
 COPY Dockerfile /tmp/
 COPY src /tmp/src/
 WORKDIR /tmp/
+RUN yum -y install maven
 RUN mvn package
 CMD ["java", "-jar", "target/APIJavaOpenShiftOKD-1.0-SNAPSHOT.jar"]
